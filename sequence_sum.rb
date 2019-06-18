@@ -1,13 +1,12 @@
 def sequence_sum(begin_number, end_number, step)
-  result = begin_number
+  result = [begin_number]
 
-  while (begin_number < end_number)
-    p begin_number += step # => 4
-    p result = result + begin_number # 4 + 1 => 5
-      if (result + step) > end_number
-      return result
-      end
+  while begin_number < end_number
+    begin_number += step
+    result << begin_number
   end
+
+  result.sum
 end
 
-p sequence_sum(2, 6, 2)
+p sequence_sum(1, 5, 3)
